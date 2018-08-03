@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -18,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ListView lvPoem;
     private ArrayList<Poem> alPoem;
-    private ArrayAdapter<Poem> aaPoem;
+    private PoemAdapter aaPoem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +28,12 @@ public class MainActivity extends AppCompatActivity {
 
         lvPoem = findViewById(R.id.lvPoem);
         alPoem = new ArrayList<>();
-        aaPoem = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, alPoem);
+        aaPoem = new PoemAdapter(this, R.layout.row, alPoem);
         lvPoem.setAdapter(aaPoem);
 
         //call getMenuCategories web service so that we can display list of Categories
         HttpRequest request = new HttpRequest
-                ("https://literary-tourist.000webhostapp.com/getPoems.php");
+                ("http://literary-tourist.000webhostapp.com/getPoems.php");
         request.setOnHttpResponseListener(mHttpResponseListener);
         request.setMethod("GET");
         request.execute();
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onResponse(String response){
                     // process response here
                     try {
+
                         Log.i("JSON Results", response);
                         JSONArray jsonArray = new JSONArray(response);
                         for (int i=0; i<jsonArray.length(); i++){

@@ -7,46 +7,61 @@
     android:orientation="vertical"
     tools:context=".PhotoActivity">
 
-    <LinearLayout
+    <com.jsibbold.zoomage.ZoomageView
+        android:id="@+id/zw1"
         android:layout_width="match_parent"
-        android:layout_height="146dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        app:zoomage_animateOnReset="true"
+        app:zoomage_autoCenter="true"
+        app:zoomage_autoResetMode="UNDER"
+        app:zoomage_maxScale="8"
+        app:zoomage_minScale="0.6"
+        app:zoomage_restrictBounds="false"
+        app:zoomage_translatable="true"
+        app:zoomage_zoomable="true" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="366dp"
-            android:layout_height="149dp"
-            android:layout_weight="1"
-            app:srcCompat="@mipmap/ic_launcher" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="149dp"
-            android:layout_weight="1"
-            app:srcCompat="@mipmap/ic_launcher" />
-
-    </LinearLayout>
-
-    <LinearLayout
+    <com.jsibbold.zoomage.ZoomageView
+        android:id="@+id/zw2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        app:zoomage_animateOnReset="true"
+        app:zoomage_autoCenter="true"
+        app:zoomage_autoResetMode="UNDER"
+        app:zoomage_maxScale="8"
+        app:zoomage_minScale="0.6"
+        app:zoomage_restrictBounds="false"
+        app:zoomage_translatable="true"
+        app:zoomage_zoomable="true" />
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="366dp"
-            android:layout_height="149dp"
-            android:layout_weight="1"
-            app:srcCompat="@mipmap/ic_launcher" />
+    <com.jsibbold.zoomage.ZoomageView
+        android:id="@+id/zw3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        app:zoomage_animateOnReset="true"
+        app:zoomage_autoCenter="true"
+        app:zoomage_autoResetMode="UNDER"
+        app:zoomage_maxScale="8"
+        app:zoomage_minScale="0.6"
+        app:zoomage_restrictBounds="false"
+        app:zoomage_translatable="true"
+        app:zoomage_zoomable="true" />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="match_parent"
-            android:layout_height="149dp"
-            android:layout_weight="1"
-            app:srcCompat="@mipmap/ic_launcher" />
-    </LinearLayout>
+    <com.jsibbold.zoomage.ZoomageView
+        android:id="@+id/zw4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        app:zoomage_animateOnReset="true"
+        app:zoomage_autoCenter="true"
+        app:zoomage_autoResetMode="UNDER"
+        app:zoomage_maxScale="8"
+        app:zoomage_minScale="0.6"
+        app:zoomage_restrictBounds="false"
+        app:zoomage_translatable="true"
+        app:zoomage_zoomable="true" />
+
 
 </LinearLayout>
