@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         //call getMenuCategories web service so that we can display list of Categories
         HttpRequest request = new HttpRequest
-                ("http://literary-tourist.000webhostapp.com/getPoems.php");
+                ("https://literarytouristsingapore.000webhostapp.com/getPoem.php");
         request.setOnHttpResponseListener(mHttpResponseListener);
         request.setMethod("GET");
         request.execute();

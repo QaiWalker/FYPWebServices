@@ -29,7 +29,7 @@ public class PhotoActivity extends AppCompatActivity {
 
         //call getMenuCategories web service so that we can display list of Categories
         HttpRequest request = new HttpRequest
-                ("http://literary-tourist.000webhostapp.com/getPoemsById.php?poem_id=" + id);
+                ("https://literarytouristsingapore.000webhostapp.com/getPoemById.php?poem_id=" + id);
         request.setOnHttpResponseListener(mHttpResponseListener);
         request.setMethod("GET");
         request.execute();
