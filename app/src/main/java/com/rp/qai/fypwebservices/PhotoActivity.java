@@ -14,6 +14,7 @@ import org.json.JSONObject;
 
 public class PhotoActivity extends AppCompatActivity {
     ZoomageView zw1, zw2, zw3, zw4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +30,7 @@ public class PhotoActivity extends AppCompatActivity {
 
         //call getMenuCategories web service so that we can display list of Categories
         HttpRequest request = new HttpRequest
-                ("https://literarytouristsingapore.000webhostapp.com/getPoemById.php?poem_id=" + id);
+                ("http://literarytouristsingapore.000webhostapp.com/getPoemById.php?poem_id=" + id);
         request.setOnHttpResponseListener(mHttpResponseListener);
         request.setMethod("GET");
         request.execute();
@@ -45,10 +46,10 @@ public class PhotoActivity extends AppCompatActivity {
 
                         Log.i("JSON Results", response);
                         JSONObject jsonObj = new JSONObject(response);
-                        JSONArray picArr = jsonObj.getJSONArray("poem_images");
+                        JSONArray picArr = jsonObj.getJSONArray("poem_videos");
                         for (int i=0; i<picArr.length(); i++){
                             JSONObject picObj = picArr.getJSONObject(i);
-                            String url = picObj.getString("photo_url");
+                            String url = picObj.getString("video_url");
 
 //                            int poemId = jsonObj.getInt("poem_id");
 //                            String title = jsonObj.getString("title");
